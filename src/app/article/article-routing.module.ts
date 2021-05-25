@@ -11,15 +11,9 @@ const articleRoutes: Routes = [
 	  path: '',
 	  component: ArticleComponent,
 	  children: [ 
-		{
-		   path: 'list',
-		   component: ArticleListComponent,
-	           canActivateChild: [ AuthGuardService ],			
+		{path: 'list',component: ArticleListComponent, canActivateChild: [ AuthGuardService ],			
 		   children: [
-			{
-			   path: ':id',
-			   component: ArticleEditComponent
-			}
+			{ path: ':id',component: ArticleEditComponent}
 		   ]			
 		}
 	  ]
